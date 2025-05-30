@@ -1,0 +1,2 @@
+Legalify Auth Service
+--

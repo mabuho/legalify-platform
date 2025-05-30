@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.legalify</groupId>
+    <artifactId>legalify-platform</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Legalify Platform</name>
+    <description>Legalify Platform - Backend Services </description>
+    <modules>
+        <!-- Common libraries -->
+        <module>legalify-bom</module>
+        <module>legalify-common-lib</module>
+
+        <!-- Service Modules -->
+        <module>legalify-auth-service</module>
+        <module>legalify-api-user</module>
+    </modules>
+
+    <properties>
+        <java.version>21</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <bom.version>1.0.0-SNAPSHOT</bom.version>
+        <common-lib.version>1.0.0-SNAPSHOT</common-lib.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency> <groupId>com.legalify</groupId> <artifactId>legalify-bom</artifactId> <version>${bom.version}</version> <type>pom</type> <scope>import</scope> </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Spring Boot Plugin -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
