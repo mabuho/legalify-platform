@@ -1,0 +1,15 @@
+app:
+  name: legalify-auth-service
+server:
+  port: 8081
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: https://korvex.us.auth0.com/
+          # The jwk-set-uri is resolved automatically.
+          jwk-set-uri: https://korvex.us.auth0.com/.well-known/jwks.json
