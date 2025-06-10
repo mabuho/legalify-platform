@@ -1,0 +1,17 @@
+app:
+  name: legalify-user-service
+server:
+  port: 8082
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: https://korvex.us.auth0.com/
+
+#logging:
+#  level:
+#    ROOT: DEBUG
