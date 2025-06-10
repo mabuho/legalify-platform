@@ -27,6 +27,11 @@ public class AuthController {
         return "Hello from Legalify-Auth-Service!!!";
     }
 
+    @GetMapping("/hello")
+    public ResponseEntity<Object> hello() {
+        return ResponseEntity.ok("Hello, the Legalify API is up!");
+    }
+
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
         LoginResponse response = authService.authenticateUser(request);
