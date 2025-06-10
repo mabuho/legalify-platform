@@ -1,15 +1,15 @@
 package com.legalify.auth.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
-@JsonIgnoreProperties(value = { "access_token", "token_type", "expires_in" })
+@Data
+@JsonIgnoreProperties(value = { "token_type" })
 public class LoginResponse {
+
     private String access_token;
     private String id_token;
     private String token_type;
     private int expires_in;
+
 }

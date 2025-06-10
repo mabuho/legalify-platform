@@ -1,11 +1,13 @@
 package com.legalify.auth.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
-@Setter
-@Getter
+@Data
+@SuperBuilder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthRequestDTO {
 
     @JsonProperty("client_id")
@@ -14,21 +16,10 @@ public class AuthRequestDTO {
     @JsonProperty("client_secret")
     private String clientSecret;
 
-    @JsonProperty("domain")
-    private String domain;
-
     @JsonProperty("audience")
     private String audience;
 
     @JsonProperty("grant_type")
     private String grantType;
 
-    @JsonProperty("scope")
-    private String scope;
-
-    @JsonProperty("username")
-    private String username;
-
-    @JsonProperty("password")
-    private String password;
 }

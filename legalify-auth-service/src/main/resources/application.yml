@@ -13,3 +13,9 @@ spring:
           issuer-uri: https://korvex.us.auth0.com/
           # The jwk-set-uri is resolved automatically.
           jwk-set-uri: https://korvex.us.auth0.com/.well-known/jwks.json
+
+auth:
+  client-id: ${AUTH0_CLIENT_ID}
+  client-secret: ${AUTH0_CLIENT_SECRET}
+  domain: ${AUTH0_DOMAIN}
+  audience: ${AUTH0_AUDIENCE}
